@@ -28,5 +28,5 @@ phone = re.findall("Dial to the number:<font color=blue> (.*?) </font> <br/>", i
 code = re.findall("When asked enter the code: <font color=blue>(.*?) </font>", info)[0]
 
 print "---' DETAILS '---"
-succes("Call: " + phone.replace("-"," "))
+success("Call: " + phone.replace("-"," "))
 success("Code: " + code)
