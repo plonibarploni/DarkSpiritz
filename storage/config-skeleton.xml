@@ -4,6 +4,7 @@
       <target>1.1.1.1</target>
       <LHOST>127.0.0.1</LHOST>
       <LPORT>8080</LPORT>
+      <RPORT>23</RPORT>
       <interface>wlan0</interface>
       <urlpath>/connect</urlpath>
       <dnsspoof>www.test.com</dnsspoof>
