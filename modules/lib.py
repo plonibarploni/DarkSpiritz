@@ -20,7 +20,7 @@ def folder():
 	print fold + " options (" + fin + "):"
 	print ""
 	print "  [options]	[value]"
-	print "  ---------	-------------"
+	print "  ---------	-------"
 	for c in list(init):
 		tree = etree.parse("storage/logs/config.xml")
 		for b in tree.xpath("/configuration/config/" + c):
