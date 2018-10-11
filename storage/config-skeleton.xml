@@ -5,6 +5,8 @@
       <LHOST>127.0.0.1</LHOST>
       <LPORT>8080</LPORT>
       <RPORT>23</RPORT>
+      <USER>admin</USER>
+      <PASSLIST>/usr/bin/example.txt</PASSLIST>
       <interface>wlan0</interface>
       <urlpath>/connect</urlpath>
       <dnsspoof>www.test.com</dnsspoof>
