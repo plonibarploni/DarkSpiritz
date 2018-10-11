@@ -1,11 +1,19 @@
 Description = 'Open a telnet shell'
 
 from plugin_support import *
-import os, sys
 
-target = ask.target
-port = ask.RPORT
+init = {
+    'target':ask.target,
+    'RPORT':ask.LPORT
+}
 
-command = 'telnet ' + target + " " + port
-text("Starting Telnet Connection With: " + target + ":" + port)
-os.system(command)
+def run():
+    global init
+    import os, sys
+
+    target = init['target']
+    port = init['RPORT']
+
+    command = 'telnet ' + target + " " + port
+    text("Starting Telnet Connection With: " + target + ":" + port)
+    os.system(command)
