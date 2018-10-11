@@ -68,7 +68,7 @@ def dashboard():
 			print "  Command         Description"
 			print "  -------         -----------"
 			print "  help            Display help menu."
-			print "  execute         Execute the plugin."
+			print "  exploit         Execute the plugin."
 			print "  back            Go back."
 			print "  clear           Clear Terminal Cache."
 			print "  show options    Display options of config."
@@ -77,7 +77,7 @@ def dashboard():
 			dashboard()
 		elif terminal == 'back':
 			exit()
-		elif terminal == 'execute':
+		elif terminal == 'exploit':
 			RescoursesDir = os.getcwd() + "/" + fold + "/"
 			sys.path.insert(0, RescoursesDir)
 			xaa = "from " + fin + " import *"
