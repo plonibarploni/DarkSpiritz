@@ -1,20 +1,13 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import re
-import sys
-import string
-import time
-import random
-import os
-import glob
-from lxml import etree
+import re, sys, string, time, random, os, glob, subprocess, rlcompleter, readline
 from urlparse import urlparse
 from struct import pack
-import rlcompleter, readline
-import subprocess
+from lxml import etree
 from sys import stdout
 from subprocess import check_output
+
 XML = "storage/logs/config.xml"
 tree = etree.parse(XML)
 
@@ -37,11 +30,20 @@ det = sys.argv[0]
 den = det.split('.')[-2]
 fin = den.split('/')[1]
 fold = den.split('/')[0]
-__plugin__      = "%s.plugin" % (fin)
+__plugin__      = "%s.py" % (fin)
 RescoursesDir = os.getcwd()
 dandtime = time.strftime("%H:%M:%S")
 
-tabcomp = ['help','execute','info','back']
+tabcomp = [
+	'help',
+	'execute',
+	'info',
+	'back',
+	'set',
+	'show options',
+	'options',
+	'show'
+	]
 
 def completer(text, state):
     options = [x for x in tabcomp if x.startswith(text)]
@@ -54,76 +56,64 @@ readline.set_completer(completer)
 readline.parse_and_bind("tab: complete")
 
 def dashboard():
-    try:
-        line_1 = "\033[4m" + intname + "\033[0m " + fold + "(\033[31m" + fin + "\033[0m) > "
-        terminal = raw_input(line_1).lower()
-        time.sleep(0.2)
-        if terminal == 'help':
-            print "Core Commands"
-            print "============="
-            print ""
-            print "  Command         Description"
-            print "  -------         -----------"
-            print "  help            Display help menu."
-            print "  execute         Execute the plugin."
-            print "  back            Go back."
-            print "  info            Display module menu."
-            print "  clear           Clear Terminal Cache."
-            print ""
-            dashboard()
-        elif terminal == 'execute':
-            before_execute()
-            pass
-        elif terminal == 'clear':
-            os.system('clear')
-            dashboard()
-        elif terminal == "info":
-            with open(den + ".plugin", 'r') as myfile:
-                data = myfile.read().splitlines()
-                desc = data[0]
-                datar = desc.replace("Description = '", "")
-                x = datar.rstrip("'")
-                if x == "#!/usr/bin/python":
-                    x = "[\033[1;31m?\033[0m] Description has not yet been implemented."
-                print "Description: " + x
-            dashboard()
-        elif terminal == 'back':
-            sys.exit()
-        else:
-            print "Unknown syntax: %s" % (terminal)
-            dashboard()
-    except KeyboardInterrupt:
-        sys.exit()
+	try:
+		line_1 = "\033[4m" + intname + "\033[0m " + fold + "(\033[31m" + fin + "\033[0m) > "
+		terminal = raw_input(line_1)
+		time.sleep(0.2)
+		if terminal == "help":
+			print ""
+			print "Core Commands"
+			print "============="
+			print ""
+			print "  Command         Description"
+			print "  -------         -----------"
+			print "  help            Display help menu."
+			print "  execute         Execute the plugin."
+			print "  back            Go back."
+			print "  clear           Clear Terminal Cache."
+			print "  show options    Display options of config."
+			print "  set             set option."
+			print ""
+			dashboard()
+		elif terminal == 'back':
+			exit()
+		elif terminal == 'execute':
+			RescoursesDir = os.getcwd() + "/" + fold + "/"
+			sys.path.insert(0, RescoursesDir)
+			xaa = "from " + fin + " import *"
+			exec(xaa)
+			run()
+		elif terminal == 'clear':
+			os.system('clear')
+			dashboard()
+		elif terminal[0:3] == "set":
+			v = str(terminal[4:].replace(" ","\n"))
+			a = open("storage/logs/temp","w")
+			a.write(v)
+			a.close()
+			b = open("storage/logs/temp","r").readlines()
+			os.system("sed -i -e '/<configuration>/,/<\/configuration>/ s|<" + b[0].strip("\n") + ">[0-9a-z.]\{1,\}</" + b[0].strip("\n") + ">|<" + b[0].strip("\n") + ">" + b[1].strip("\n") + "</" + b[0].strip("\n") + ">|g' storage/logs/config.xml && rm storage/logs/temp")
+			dashboard()
+		elif terminal[0:12] == "show options":
+			fincreator = open("storage/logs/finandferb.config","w")
+			fincreator.write(fin + "\n")
+			fincreator.write(fold)
+			fincreator.close()
+			xxxdad = open("modules/lib.py","r")
+			exec(xxxdad.read())
+			xxxdad.close()
+			dashboard()
+		else:
+			None
+			dashboard()
+	except KeyboardInterrupt:
+		sys.exit()
 
 class ask():
     tree = etree.parse("storage/logs/config.xml")
     for b in tree.xpath("/configuration/config/*"):
         dat = "%s = '%s'" % (b.tag,b.text)
 	exec(dat)
-
-def before_execute():
-    try:
-        default10 = "yes"
-        time.sleep(0.2)
-        print "\033[1;94m[*]\033[0m Configuring Plugin"
-        time.sleep(1)
-	print ""
-        print "Name             Set Value"
-        print "----             ----------"
-	tree = etree.parse("storage/logs/config.xml")
-	for d in tree.xpath("/configuration/config/*"):
-            print "%s           %s" % (d.tag,d.text)
-        print "Plugin           %s" % (fin)
-        print ""
-        et = raw_input("\033[1;32m[?]\033[0m Execute Plugins? [" + default10 + "]: ")  or default10
-        if et == 'yes':
-            pass
-        elif et == 'no':
-            exit()
-        else:
-            print "[\033[1;31m!\033[0m] No options were chosen."
-    except KeyboardInterrupt:
-        exit()
 
 def run(cmd):
     x = check_output(cmd, shell=True)
