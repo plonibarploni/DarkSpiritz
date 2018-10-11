@@ -6,6 +6,7 @@ init = {
 }
 
 def run():
+    global init
     import requests, re
     url = "http://crazycall.net/index.php"
 
