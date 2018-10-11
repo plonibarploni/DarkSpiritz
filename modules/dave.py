@@ -36,7 +36,7 @@ dandtime = time.strftime("%H:%M:%S")
 
 tabcomp = [
 	'help',
-	'execute',
+	'exploit',
 	'info',
 	'back',
 	'set',
