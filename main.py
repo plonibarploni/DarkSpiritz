@@ -145,7 +145,7 @@ def main():
                 bb = line.split(terminal[5:] + '/')[1].split('.plugin')[0]
                 if x == "#!/usr/bin/python":
                     x = "\033[1;91mDescription has not yet been implemented.\033[1;m"
-                print " %s\t   %s" % (bb,x)
+                print(" {0:17s} {1:12s}".format(bb,x))
             print " "
             main()
 	elif terminal[0:] == 'session':
