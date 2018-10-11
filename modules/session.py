@@ -17,7 +17,7 @@ def show():
         ddisaslut = "%s" % (x.tag)
 	for i in data.split():
 		for l in ddisaslut.split():
-			print "  " + l + "            " + i
+			print("  {0:17s} {1:12s}".format(l, i))
 	#print "  " + x.tag + "            " + x.text
     print ""
 
