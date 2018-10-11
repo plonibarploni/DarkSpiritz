@@ -78,9 +78,20 @@ def dashboard():
 		elif terminal == 'back':
 			exit()
 		elif terminal == 'exploit':
-			RescoursesDir = os.getcwd() + "/" + fold + "/"
+			fincreator = open("storage/logs/finandferb.config","w")
+			fincreator.write(fin + "\n")
+			fincreator.write(fold)
+			fincreator.close()
+
+			fincreator = open("storage/logs/finandferb.config","r").readlines()
+			pluginname = fincreator[0].strip("\n")
+			foldername = fincreator[1].strip("\n")
+
+			RescoursesDir = os.getcwd() + "/" + foldername + "/"
 			sys.path.insert(0, RescoursesDir)
-			xaa = "from " + fin + " import *"
+
+			direc = foldername + "/" + pluginname + ".plugin"
+			xaa = open(direc,"r").read()
 			exec(xaa)
 			run()
 		elif terminal == 'clear':
