@@ -77,6 +77,23 @@ def dashboard():
 			dashboard()
 		elif terminal == 'back':
 			exit()
+		elif terminal == 'info':
+			pysec = open(fold + "/" + fin + ".plugin","r").read()
+			exec(pysec)
+
+			if "info = {" in pysec:
+				for i in info:
+					title = i
+					body = info[str(i)]
+					print "\n" + str(title) + ":"
+					if not isinstance(body, str):
+						for value_element in body:
+							print "- ", value_element
+					else:
+						print body
+			else:
+				pass
+			dashboard()
 		elif terminal == 'exploit':
 			fincreator = open("storage/logs/finandferb.config","w")
 			fincreator.write(fin + "\n")
