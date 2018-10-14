@@ -5,7 +5,7 @@
 # DarkSpiritz (Python 2.x)
 A penetration testing framework for UNIX systems.
 
-<img src="https://i.imgur.com/1zntmoz.png">
+<img src="https://i.imgur.com/kvt1fZx.jpg">
 
 # What is DarkSpiritz?
 
