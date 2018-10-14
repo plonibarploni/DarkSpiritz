@@ -1,0 +1,7 @@
+logging
+impacket
+pysmb
+pycrypto
+paramiko
+scapy
+whois
