@@ -129,6 +129,9 @@ def main():
              retarget.edit()
              main()
         elif terminal[0:17] == 'show ' + terminal[5:]:
+            if os.path.exists(terminal[5:]) == False:
+                print "\033[1;91mPlugin folder does not exist\033[1;0m"
+                main()
             print ""
             print "Plugin Category: " + terminal[5:]
             print "==============================\n"
