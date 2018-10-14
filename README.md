@@ -23,7 +23,7 @@ git clone https://github.com/DarkSpiritz/DarkSpiritz.git
 
 To install DarkSpiritz clone the github repo and run:
 ```
-sudo python installer.py
+pip install -r requirements.txt
 ```
 
 This will download all necessary modules for DarkSpiritz. Once you run this you will be able to run:
