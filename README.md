@@ -8,7 +8,7 @@
 
 ![alt text](https://img.shields.io/badge/Gitter-%20Join!-blue.svg)
 
-# DarkSpiritz (Python 2.x)
+# DarkSpiritz (~~Python 2.x~~Moving To Python3. Python2 will be available in the Python2 Branch!)
 A penetration testing framework for Linux and Windows systems.
 
 <img src="https://i.imgur.com/kvt1fZx.jpg">
@@ -49,5 +49,4 @@ These are features that DarkSpiritz Team prides themself on based on this progra
 - Easy to use UX
 - Multi-functionality
 
-# Default Plugins:
 
