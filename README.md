@@ -9,7 +9,7 @@
 ![alt text](https://img.shields.io/badge/Gitter-%20Join!-blue.svg)
 
 # DarkSpiritz (Python 2.x)
-A penetration testing framework for UNIX systems.
+A penetration testing framework for Linux and Windows systems.
 
 <img src="https://i.imgur.com/kvt1fZx.jpg">
 
