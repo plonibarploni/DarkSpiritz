@@ -40,8 +40,8 @@ or
 ```
 ./start.py
 ```
-(if ./start.py doesn't work run `chmod +x start.py`)
-from within the same directory as DarkSpiritz.
+(if ./start.py doesn't work run `chmod +x start.py`
+from within the same directory as DarkSpiritz.)
 
 You will see a start-up screen. This screen will display things like commands and configuration settings. You can set configuration settings inside the config.xml file itself or through commands in the DarkSpiritz shell.
 
