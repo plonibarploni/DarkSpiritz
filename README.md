@@ -11,7 +11,7 @@
 # DarkSpiritz (Python3)
 A penetration testing framework for Linux and Windows systems.
 
-<img src="https://i.imgur.com/kvt1fZx.jpg">
+<img src="https://i.imgur.com/IxsAoei.png">
 
 # What is DarkSpiritz?
 
