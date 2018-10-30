@@ -26,7 +26,7 @@ Syntel Team:
 
 # Version 2.0 UPDATE (READ IMPORTANT)
 
-We have completely rewritten the framework and configuration method based off community feedback. We have also finally updated to Python 3. It took a long time but was most definitely worth it! This version should run a lot smoother and have a cleaner UI. Check the reddit post here to see all changes: https://www.reddit.com/r/netsec/comments/9skdju/huge_update_to_darkspiritz_pentesting_framework/
+We have completely rewritten the framework and configuration method based off community feedback. We have also finally updated to Python 3. It took a long time but was most definitely worth it! This version should run a lot smoother and have a cleaner UI. 
 
 Enjoy!
 
