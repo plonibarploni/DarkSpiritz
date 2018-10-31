@@ -16,4 +16,5 @@ Categories:
                                         if "CODE_OF_CONDUCT.md" not in d:
                                             if "modules" not in d:
                                                 if "start.py" not in d:
-                                                    print("""%s""" % (d.upper()))
+                                                    if "requirements.txt" not in d:
+                                                        print("""%s""" % (d.upper()))
