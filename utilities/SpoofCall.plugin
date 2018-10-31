@@ -6,9 +6,9 @@ def run():
     import requests, re
     url = "http://crazycall.net/index.php"
 
-    tocall = raw_input("[?] Number to call (Ex. 505): ")
-    display = raw_input("[?] From number (Ex. 1337): ")
-    country = raw_input("[?] Country Number (Ex. 44): ")
+    tocall = input("[?] Number to call (Ex. 505): ")
+    display = input("[?] From number (Ex. 1337): ")
+    country = input("[?] Country Number (Ex. 44): ")
 
     api = "country=" + country + "&callerIDprefix=" + country + "&callerIDPhone=" + display + "&toKidomet=44&toPhone=" + tocall + "&pich=0"
     headers = {
