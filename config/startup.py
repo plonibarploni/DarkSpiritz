@@ -26,7 +26,7 @@ All it requires from you is a username you'd like to use.
     typinganimation(welcometext)
     enteruser = "Enter Username: "
     name = input("Enter Username: ")
-    config['DEFAULT']['NAME'] = name
+    config['DEFAULT']['NAME'] = str(name)
     platformchecktxt = "Checking Platform..."
     typinganimation(platformchecktxt)
     platform = sys.platform
