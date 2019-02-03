@@ -32,19 +32,20 @@ Enjoy!
 
 # Getting Started
 
+*DarkSpiritz wiki available [here](https://github.com/DarkSpiritz/DarkSpiritz/wiki).*
+
 Clone the repository with git:
 ```
 git clone https://github.com/DarkSpiritz/DarkSpiritz.git
 ```
 
-*DarkSpiritz wiki available [here](https://github.com/DarkSpiritz/DarkSpiritz/wiki)*
-
-To install DarkSpiritz clone the github repo and run:
+Install all required modules:
 ```
+cd DarkSpiritz
 pip install -r requirements.txt
 ```
 
-This will download all necessary modules for DarkSpiritz. Once you run this you will be able to run:
+Run DarkSpiritz:
 ```
 python start.py
 ```
@@ -52,7 +53,7 @@ or
 ```
 ./start.py
 ```
-(if ./start.py doesn't work run `chmod +x start.py`
+(if `./start.py` doesn't work run `chmod +x start.py`
 from within the same directory as DarkSpiritz.)
 
 You will see a start-up screen. This screen will display things like commands and configuration settings. You can set configuration settings inside the config.xml file itself or through commands in the DarkSpiritz shell.
