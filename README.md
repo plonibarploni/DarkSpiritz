@@ -1,12 +1,4 @@
-![alt text](https://travis-ci.com/DarkSpiritz/DarkSpiritz.svg?branch=master)
-
-[![GitHub issues](https://img.shields.io/github/issues/DarkSpiritz/DarkSpiritz.svg)](https://github.com/DarkSpiritz/DarkSpiritz/issues)
-[![GitHub stars](https://img.shields.io/github/stars/DarkSpiritz/DarkSpiritz.svg)](https://github.com/DarkSpiritz/DarkSpiritz/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/DarkSpiritz/DarkSpiritz.svg)](https://github.com/DarkSpiritz/DarkSpiritz/network)
-[![GitHub license](https://img.shields.io/github/license/DarkSpiritz/DarkSpiritz.svg)](https://github.com/DarkSpiritz/DarkSpiritz/blob/master/LICENSE)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/DarkSpiritz/DarkSpiritz.svg?style=popout)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FDarkSpiritz%2FDarkSpiritz)
-
-![alt text](https://img.shields.io/badge/Gitter-%20Join!-blue.svg)
+*Notice: It appears that the original [DarkSpiritz repository](https://github.com/DarkSpiritz/DarkSpiritz/issues) has disappeared. I'm not aware of any reason for it, and I'm not aware of any other forks that have all the commits until the time when I forked. Therefore, I will leave this here for historical reasons. **I will not be maintaining it***.
 
 # DarkSpiritz (Python3)
 A penetration testing framework for Linux and Windows systems.
@@ -37,14 +29,13 @@ Clone the repository with git:
 git clone https://github.com/DarkSpiritz/DarkSpiritz.git
 ```
 
-*DarkSpiritz wiki available [here](https://github.com/DarkSpiritz/DarkSpiritz/wiki)*
-
-To install DarkSpiritz clone the github repo and run:
+Install all required modules:
 ```
+cd DarkSpiritz
 pip install -r requirements.txt
 ```
 
-This will download all necessary modules for DarkSpiritz. Once you run this you will be able to run:
+Run DarkSpiritz:
 ```
 python start.py
 ```
@@ -52,7 +43,7 @@ or
 ```
 ./start.py
 ```
-(if ./start.py doesn't work run `chmod +x start.py`
+(if `./start.py` doesn't work run `chmod +x start.py`
 from within the same directory as DarkSpiritz.)
 
 You will see a start-up screen. This screen will display things like commands and configuration settings. You can set configuration settings inside the config.xml file itself or through commands in the DarkSpiritz shell.
