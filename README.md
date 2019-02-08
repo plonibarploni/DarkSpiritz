@@ -1,12 +1,4 @@
-![alt text](https://travis-ci.com/DarkSpiritz/DarkSpiritz.svg?branch=master)
-
-[![GitHub issues](https://img.shields.io/github/issues/DarkSpiritz/DarkSpiritz.svg)](https://github.com/DarkSpiritz/DarkSpiritz/issues)
-[![GitHub stars](https://img.shields.io/github/stars/DarkSpiritz/DarkSpiritz.svg)](https://github.com/DarkSpiritz/DarkSpiritz/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/DarkSpiritz/DarkSpiritz.svg)](https://github.com/DarkSpiritz/DarkSpiritz/network)
-[![GitHub license](https://img.shields.io/github/license/DarkSpiritz/DarkSpiritz.svg)](https://github.com/DarkSpiritz/DarkSpiritz/blob/master/LICENSE)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/DarkSpiritz/DarkSpiritz.svg?style=popout)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FDarkSpiritz%2FDarkSpiritz)
-
-![alt text](https://img.shields.io/badge/Gitter-%20Join!-blue.svg)
+*Notice: It appears that the original [DarkSpiritz repository](https://github.com/DarkSpiritz/DarkSpiritz/issues) has disappeared. I'm not aware of any reason for it, and I'm not aware of any other forks that have all the commits until the time when I forked. Therefore, I will leave this here for historical reasons. **I will not be maintaining it***.
 
 # DarkSpiritz (Python3)
 A penetration testing framework for Linux and Windows systems.
@@ -31,8 +23,6 @@ We have completely rewritten the framework and configuration method based off co
 Enjoy!
 
 # Getting Started
-
-*DarkSpiritz wiki available [here](https://github.com/DarkSpiritz/DarkSpiritz/wiki).*
 
 Clone the repository with git:
 ```
