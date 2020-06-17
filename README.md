@@ -1,4 +1,4 @@
-*Notice: It appears that the original [DarkSpiritz repository](https://github.com/DarkSpiritz/DarkSpiritz) has disappeared. I'm not aware of any reason for it, and I'm not aware of any other forks that are as recent as this. Therefore, I will leave this here for historical reasons. **I will not be maintaining it***.
+*Notice: The original [DarkSpiritz repository](https://github.com/DarkSpiritz/DarkSpiritz) has been deleted. Apparently it was [deleted](https://github.com/M4cs/DarkSpiritz/commit/5fabb986a460dd9646601b27242bb2f651977d39#diff-04c6e90faac2675aa89e2176d2eec7d8) by a [rogue member](https://github.com/M4cs/DarkSpiritz/commit/4827dd282224533853192b6df8a703375076a76d#diff-04c6e90faac2675aa89e2176d2eec7d8). It has since been [republished](https://github.com/M4cs/DarkSpiritz), however the commit history was lost. Therefore, I will leave this here for historical reasons. **I will not be maintaining it***.
 
 # DarkSpiritz (Python3)
 A penetration testing framework for Linux and Windows systems.
